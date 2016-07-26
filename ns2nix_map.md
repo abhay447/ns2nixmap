@@ -42,6 +42,7 @@ Maps directly to a nix group containing the event data stored in a data array wi
     | EventEntity.max_data_length   |DataArray.metadata(*Section*)(#SectionNotes)|
     | EventEntity.min_data_length   |DataArray.metadata(*Section*)(#SectionNotes)|
     * Attribute names in Nix can be accessed by camel case equivalents of those in Neuroshare.
+
 ## neuroshare.AnalogEntity
 Maps directly to a nix group containing the analog data stored in a data array with the timestamps as the ticks of the dimension descriptor.
 - Attributes
@@ -65,6 +66,7 @@ Maps directly to a nix group containing the analog data stored in a data array w
     | AnalogEntity.sample_rate      |DataArray.metadata(*Section*)(#SectionNotes)|
     | AnalogEntity.units            |DataArray.metadata(*Section*)(#SectionNotes)|
     * Attribute names in Nix can be accessed by camel case equivalents of those in Neuroshare.
+
 ## neuroshare.NeuralEntity
 Maps directly to a nix group containing the neural data stored in a data array.
 - Attributes
@@ -75,6 +77,7 @@ Maps directly to a nix group containing the neural data stored in a data array.
     | NeuralEntity.source_entity_id |DataArray.metadata(*Section*)(#SectionNotes)|
     | NeuralEntity.source_unit_id   |DataArray.metadata(*Section*)(#SectionNotes)|
     * Attribute names in Nix can be accessed by camel case equivalents of those in Neuroshare.
+
 ## neuroshare.SegmentEntity
 Maps directly to a nix group containing all segments all data arrays corresponding to all segments.
 All dataArrays from all segment enitities are collectively stored in the segment group.
