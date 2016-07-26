@@ -18,10 +18,10 @@
                             3: 'segments',
                             4: 'neurals'
 - The metadata for every data array in a group(except segments) is added to the respective sub-section as listed above.
- -- The sub-sections of individual segments contain the metadata for the segment.
- -- The segments sub-section contains the metadata of every segment in sub-sections named after those segments(segment.label).
- -- The sub-sections of individual segments contain the metadata for individual dataArrays of the segment as their sub-sections.
- -- The sub-sections of individual segments contain the metadata for all the sources of segment as its sub-section (Ex. 'SourceInfo.0').
+ -  The sub-sections of individual segments contain the metadata for the segment.
+ -  The segments sub-section contains the metadata of every segment in sub-sections named after those segments(segment.label).
+ -  The sub-sections of individual segments contain the metadata for individual dataArrays of the segment as their sub-sections.
+ -  The sub-sections of individual segments contain the metadata for all the sources of segment as its sub-section (Ex. 'SourceInfo.0').
  
 ## neuroshare.File
 Does not directly map to but is analogous nix.File .
