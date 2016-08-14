@@ -11,8 +11,8 @@
 - Every group contains the data arrays corresponding to that entity i.e. every data array is appended to an appropriate group.
 
 ## Structure for metadata
-- The metadata is stored in top level section called main_section.
-- The main_section contains for sub-section:
+- The metadata is stored in top level section named same as the input file.
+- The section contains four sub-section:
                             1: 'events',
                             2: 'analogs',
                             3: 'segments',
@@ -29,7 +29,7 @@ The top level data container of the nix.File object is a block entity. In our ca
 
 ## Main block
 The Block entity is a top-level, summarizing element that allows to group the other data entities belonging for example to the same recording session.
-Since all the data in a neuroshare file is from a single recording thus all the data in the resulting nix file is added as a child to the block named "main_block".
+Since all the data in a neuroshare file is from a single recording thus all the data in the resulting nix file is added as a child to the block named same as the input file.
 
 ## neuroshare.EventEntity
 Maps directly to a nix group containing the event data stored in a data array with the timestamps as the ticks of dimension descriptor.
@@ -94,29 +94,29 @@ The metadata for all segments are stored as sub sections in the segment section.
 ** Attribute names in Nix can be accessed by camel case equivalents of those in Neuroshare. **
 
 (1)The metadata of an Event entities can be accessed by:
-    meta = file.blocks['main_block'].groups['Event'].data_arrays[#index or name].metadata
+    meta = file.blocks['input_file'].groups['Event'].data_arrays[#index or name].metadata
     print meta['ItemCount'] #note the camel case equivalent of attribute name
 
 (2)The metadata of an Analog entities can be accessed by:
-    meta = file.blocks['main_block'].groups['Analog'].data_arrays[#index or name].metadata
+    meta = file.blocks['input_file'].groups['Analog'].data_arrays[#index or name].metadata
     print meta['SampleRate'] #note the camel case equivalent of attribute name
     
 (3)The metadata of an Neural entities can be accessed by:
-    meta = file.blocks['main_block'].groups['Neural'].data_arrays[#index or name].metadata
+    meta = file.blocks['input_file'].groups['Neural'].data_arrays[#index or name].metadata
     print meta['ProbeInfo'] #note the camel case equivalent of attribute name    
 
 (4)The metadata of a Segment:
     
     The metadata for a segment can be accessed by:
-        meta = file.sections['main_section'].sections['segments'].sections[#index or name+"_metadata"]
+        meta = file.sections['input_file'].sections['segments'].sections[#index or name+"_metadata"]
         print meta['MaxSampleCount'] #note the camel case equivalent of attribute name
 
     The metadata for the sources of a segment can be accessed by using index of the source:
         # HERE let the index of desired source be 0
-        meta = file.sections['main_section'].sections['segments'].sections[#index or name+"_metadata"].sections['SourceInfo.0']
+        meta = file.sections['input_file'].sections['segments'].sections[#index or name+"_metadata"].sections['SourceInfo.0']
         print meta['HighFilterType'] #note the camel case equivalent of attribute name
                 
     The metadata for the dataArray in a segment contanins only one property i.e. 'UnitId'
-        meta = file.blocks['main_block'].groups['Segment'].data_arrays[#index or name].metadata
+        meta = file.blocks['input_file'].groups['Segment'].data_arrays[#index or name].metadata
         print meta['unitID'] #note the camel case equivalent of attribute name
     
