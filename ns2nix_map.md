@@ -25,10 +25,10 @@
  
 ## neuroshare.File
 Does not directly map to but is analogous nix.File .
-The top level data container of the nix.File object is a block entity. In our case it is a block named "main_block".
+The top level data container of the nix.File object is a block entity. In our case lets call it main_block.
 
-## Main block
-The Block entity is a top-level, summarizing element that allows to group the other data entities belonging for example to the same recording session.
+## main_block
+The main_block entity is a top-level, summarizing element that allows to group the other data entities belonging for example to the same recording session.
 Since all the data in a neuroshare file is from a single recording thus all the data in the resulting nix file is added as a child to the block named same as the input file.
 
 ## neuroshare.EventEntity
